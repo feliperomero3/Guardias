@@ -18,5 +18,10 @@ namespace Guardias
             get { return _numero; }
             set { _numero = value; }
         }
+
+        public override string ToString()
+        {
+            return _numero.ToString();
+        }
     }
 }

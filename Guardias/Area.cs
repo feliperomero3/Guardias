@@ -25,5 +25,10 @@ namespace Guardias
             get { return _apodo; }
             set { _apodo = value; }
         }
+
+        public override string ToString()
+        {
+            return _nombre;
+        }
     }
 }

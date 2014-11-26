@@ -13,11 +13,28 @@ namespace Guardias
         private Nodo<T> _inicio;
         private Nodo<T> _fin;
 
+        public Nodo<T> Inicio
+        {
+            get { return _inicio; }
+            private set { _inicio = value; }
+        }
+
+        public Nodo<T> Fin
+        {
+            get { return _fin; }
+            private set { _fin = value; }
+        }
+
         public Lista()
         {
             _inicio = null;
         }
 
+        // TODO comentar los métodos...
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
         public void Insertar(T x)
         {
             Nodo<T> p = new Nodo<T>(x);
@@ -34,6 +51,11 @@ namespace Guardias
             }
         }
 
+        public void Remover(T x)
+        {
+            // TODO: implementar Lista.Remover(T x)
+        }
+
         public string Mostrar()
         {
             if (_inicio != null)
@@ -42,7 +64,7 @@ namespace Guardias
                 Nodo<T> q = _inicio;
                 do
                 {
-                    contenido.AppendFormat("{0}, ", q.Entidad);
+                    contenido.AppendFormat("{0}\r\n", q.Entidad);
                     q = q.Sig;
                 }
                 while (q != _inicio);
