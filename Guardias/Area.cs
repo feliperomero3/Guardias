@@ -2,7 +2,7 @@
 
 namespace Guardias
 {
-    class Area
+    public class Area
     {
         private int _id;
         private string _nombre;

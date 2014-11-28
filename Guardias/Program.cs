@@ -6,8 +6,6 @@ namespace Guardias
 {
     class Program
     {
-        List<Area> areas;
-
         private static void Main(string[] args)
         {
             // Áreas para ejemplo rápido (no olvidar aprender TDD)
@@ -26,11 +24,17 @@ namespace Guardias
             Console.WriteLine(string.Format("Nodo _fin: {0}", areas.Fin.Entidad));
 
             Console.ReadKey();
+            Inicializar();
         }
 
-        private void Inicializar()
+        private static void Inicializar()
         {
-            
+            Origen origen = new Origen();
+            origen.Inicializar();
+            Console.WriteLine(origen.Unidades.Mostrar());
+            Console.WriteLine(origen.Areas[0].Mostrar());
+            Console.ReadKey();
+
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Guardias
     /// Nodo de tipo T para usar junto con @@link Lista.cs
     /// </summary>
     /// <typeparam name="T">Cualquier primitivo o definido por el usuario</typeparam>
-    class Nodo<T>
+    public class Nodo<T>
     {
         private T _entidad;
         private Nodo<T> _sig;

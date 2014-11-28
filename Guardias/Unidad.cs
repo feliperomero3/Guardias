@@ -2,7 +2,7 @@
 
 namespace Guardias
 {
-    class Unidad
+    public class Unidad
     {
         private int _id;
         private int _numero;

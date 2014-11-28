@@ -8,7 +8,7 @@ namespace Guardias
     /// Lista circular dinámica (no genérica) de tipo T.
     /// </summary>
     /// <typeparam name="T">Cualquier primitivo o definido por el usuario</typeparam>
-    class Lista<T>
+    public class Lista<T>
     {
         private Nodo<T> _inicio;
         private Nodo<T> _fin;

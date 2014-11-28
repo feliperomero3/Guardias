@@ -2,11 +2,18 @@
 
 namespace Guardias
 {
-    class Guardia
+    public class Guardia
     {
+        private int _id;
         private int _unidadId;
-        private int _guardiaId;
+        private int _areaId;
         private DateTime _fecha;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         public int UnidadId
         {
@@ -16,8 +23,8 @@ namespace Guardias
 
         public int GuardiaId
         {
-            get { return _guardiaId; }
-            set { _guardiaId = value; }
+            get { return _areaId; }
+            set { _areaId = value; }
         }
 
         public DateTime Fecha
