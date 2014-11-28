@@ -11,6 +11,7 @@ namespace Guardias
     {
         private T _entidad;
         private Nodo<T> _sig;
+        private Nodo<T> _ant;
 
         public Nodo(T x)
         {
@@ -28,6 +29,17 @@ namespace Guardias
         {
             get { return _sig; }
             set { _sig = value; }
+        }
+
+        public Nodo<T> Ant
+        {
+            get { return _ant; }
+            set { _ant = value; }
+        }
+
+        public override string ToString()
+        {
+            return _entidad.ToString();
         }
     }
 }

@@ -30,23 +30,24 @@ namespace Guardias
             _inicio = null;
         }
 
-        // TODO comentar los métodos...
         /// <summary>
-        /// 
+        /// Inserta un nuevo elemento T en la lista
         /// </summary>
-        /// <param name="x"></param>
+        /// <param name="x">Elemento a insertar</param>
         public void Insertar(T x)
         {
             Nodo<T> p = new Nodo<T>(x);
             if (_inicio == null)
             {
                 _inicio = _fin = p;
-                p.Sig = _inicio;
+                p.Sig = p.Ant  = _inicio;
             }
             else
             {
                 p.Sig = _inicio;
+                _inicio.Ant = p;
                 _fin.Sig = p;
+                p.Ant = _fin;
                 _fin = p;
             }
         }
@@ -56,6 +57,22 @@ namespace Guardias
             // TODO: implementar Lista.Remover(T x)
         }
 
+        /// <summary>
+        /// Devuelve el Nodo ubicado en la posición indicada
+        /// </summary>
+        /// <param name="indice">Posición del Nodo</param>
+        /// <returns>El Nodo o null si no existe</returns>
+        public Nodo<T> Encontrar(int indice)
+        {
+
+
+            return null;
+        }
+
+        /// <summary>
+        /// Devuelve el contenido de la lista
+        /// </summary>
+        /// <returns>La representación en texto del contenido</returns>
         public string Mostrar()
         {
             if (_inicio != null)
@@ -64,7 +81,7 @@ namespace Guardias
                 Nodo<T> q = _inicio;
                 do
                 {
-                    contenido.AppendFormat("{0}\r\n", q.Entidad);
+                    contenido.AppendFormat("{0}\r\n", q);
                     q = q.Sig;
                 }
                 while (q != _inicio);
