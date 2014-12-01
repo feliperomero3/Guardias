@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Guardias
 {
@@ -26,7 +25,7 @@ namespace Guardias
         public Origen()
         {
             // 6 listas de Áreas
-            _areas = new Lista<Area>[5];
+            _areas = new Lista<Area>[Auxiliar.areas.Length];
             // 1 lista para Unidades
             _unidades = new Lista<Unidad>();
         }
@@ -39,14 +38,16 @@ namespace Guardias
         {
             if (_areas != null)
             {
-                // Semana #1
-                _areas[0] = new Lista<Area>();
-                foreach (Area area in Auxiliar.areasSemana1)
+                // Seis semanas
+                for (int i = 0; i < _areas.Length; i++)
                 {
-                    _areas[0].Insertar(area);
+                    // Semana i
+                    _areas[i] = new Lista<Area>();
+                    foreach (Area area in Auxiliar.areas[i])
+                    {
+                        _areas[i].Insertar(area);
+                    }
                 }
-
-                // TODO continuar con semanas...
             }
             if (_unidades != null)
             {

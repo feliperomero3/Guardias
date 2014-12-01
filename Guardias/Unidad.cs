@@ -21,7 +21,7 @@ namespace Guardias
 
         public override string ToString()
         {
-            return _numero.ToString("D2");
+            return _numero.ToString().PadLeft(2);
         }
     }
 }

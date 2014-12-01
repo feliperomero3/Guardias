@@ -1,37 +1,153 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Guardias
 {
     /// <summary>
     /// Tiene el propósito de servir como fuente de datos
-    /// solo por conveniencia, luego se remplará por una bd.
+    /// solo por conveniencia, luego se remplazará por una bd.
     /// </summary>
     public static class Auxiliar
     {
-        public static Area[] areasSemana1 = new Area[]
+        public static Area[][] areas = new Area[][]
         {
-            new Area { Id = 7, Nombre = "ME Cabo" }, 
-            new Area { Id = 5, Nombre = "Hacienda del Mar / Fiestamericana" },
-            new Area { Id = 12, Nombre = "Recorrido" },
-            new Area { Id = 7, Nombre = "ME Cabo" },
-            new Area { Id = 24, Nombre = "Wyndham" },
-            new Area { Id = 2, Nombre = "Fiestamericana" }, 
-            new Area { Id = 24, Nombre = "Wyndham" }, 
-            new Area { Id = 4, Nombre = "Hacienda del Mar" },
-            new Area { Id = 6, Nombre = "Marina del Sol" },
-            new Area { Id = 17, Nombre = "Sitio / Finisterra" },
-            new Area { Id = 1, Nombre = "Casa Dorada" },
-            new Area { Id = 18, Nombre = "Sitio / Pueblo Bonito Sunset Beach" },
-            new Area { Id = 12, Nombre = "Recorrido" },
-            new Area { Id = 21, Nombre = "The Office" },
-            new Area { Id = 21, Nombre = "The Office" },
-            new Area { Id = 9, Nombre = "Pueblo Bonito" },
-            new Area { Id = 19, Nombre = "Sitio / Walmart" },
-            new Area { Id = 15, Nombre = "Sitio" },
-            new Area { Id = 16, Nombre = "Sitio" },
-            new Area { Id = 9, Nombre = "Pueblo Bonito" }
+            new Area[] // Semana #1
+            { 
+                new Area { Id = 07, Nombre = "ME Cabo" }, 
+                new Area { Id = 05, Nombre = "Sheraton Hacienda del Mar / Fiestamericana" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 02, Nombre = "Fiestamericana" }, 
+                new Area { Id = 25, Nombre = "Wyndham" }, 
+                new Area { Id = 04, Nombre = "Sheraton Hacienda del Mar" },
+                new Area { Id = 06, Nombre = "Marina del Sol" },
+                new Area { Id = 18, Nombre = "Sitio / Finisterra" },
+                new Area { Id = 01, Nombre = "Casa Dorada" },
+                new Area { Id = 19, Nombre = "Sitio" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 22, Nombre = "The Office" },
+                new Area { Id = 22, Nombre = "The Office" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 20, Nombre = "Sitio / Walmart" },
+                new Area { Id = 16, Nombre = "Sitio°" },
+                new Area { Id = 17, Nombre = "Sitio" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" }
+            },
+            new Area[] // Semana #2
+            {
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 21, Nombre = "The Giggling Marlin" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 21, Nombre = "Marina del Sol" },
+                new Area { Id = 18, Nombre = "Sitio / Finisterra" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 10, Nombre = "Pueblo Bonito Pacífica" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 12, Nombre = "Pueblo Bonito Sunset Beach / The Office" },
+                new Area { Id = 12, Nombre = "Pueblo Bonito Sunset Beach / The Office" },
+                new Area { Id = 11, Nombre = "Pueblo Bonito Sunset Beach" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 04, Nombre = "Sheraton Hacienda del Mar" },
+                new Area { Id = 16, Nombre = "Sitio°" },
+                new Area { Id = 17, Nombre = "Sitio" }
+            },
+            new Area[] // Semana #3
+            {
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 05, Nombre = "Sheraton Hacienda del Mar / Fiestamericana" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 02, Nombre = "Fiestamericana" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 04, Nombre = "Sheraton Hacienda del Mar" },
+                new Area { Id = 06, Nombre = "Marina del Sol" },
+                new Area { Id = 18, Nombre = "Sitio / Finisterra" },
+                new Area { Id = 16, Nombre = "Sitio°" },
+                new Area { Id = 17, Nombre = "Sitio" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 22, Nombre = "The Office" },
+                new Area { Id = 22, Nombre = "The Office" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 24, Nombre = "Walmart / ME Cabo" },
+                new Area { Id = 16, Nombre = "Sitio°" },
+                new Area { Id = 17, Nombre = "Sitio" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" }  
+            },
+            new Area[] // Semana #4
+            {
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 21, Nombre = "The Giggling Marlin" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 06, Nombre = "Marina del Sol" },
+                new Area { Id = 18, Nombre = "Sitio / Finisterra" },
+                new Area { Id = 01, Nombre = "Casa Dorada" },
+                new Area { Id = 19, Nombre = "Sitio / Pueblo Bonito Sunset Beach" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 12, Nombre = "Pueblo Bonito Sunset Beach / The Office" },
+                new Area { Id = 12, Nombre = "Pueblo Bonito Sunset Beach / The Office" },
+                new Area { Id = 11, Nombre = "Pueblo Bonito Sunset Beach" },
+                new Area { Id = 20, Nombre = "Sitio / Walmart" },
+                new Area { Id = 04, Nombre = "Sheraton Hacienda del Mar" },
+                new Area { Id = 16, Nombre = "Sitio°" },
+                new Area { Id = 17, Nombre = "Sitio" }
+            },
+            new Area[] // Semana #5
+            {
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 05, Nombre = "Sheraton Hacienda del Mar / Fiestamericana" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 02, Nombre = "Fiestamericana" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 04, Nombre = "Sheraton Hacienda del Mar" },
+                new Area { Id = 06, Nombre = "Marina del Sol" },
+                new Area { Id = 18, Nombre = "Sitio / Finisterra" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 10, Nombre = "Pueblo Bonito Pacifica" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 22, Nombre = "The Office" },
+                new Area { Id = 22, Nombre = "The Office" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 14, Nombre = "RIU" },
+                new Area { Id = 16, Nombre = "Sitio" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" }
+            },
+            new Area[] // Semana #6
+            {
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 21, Nombre = "The Giggling Marlin" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 07, Nombre = "ME Cabo" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 25, Nombre = "Wyndham" },
+                new Area { Id = 09, Nombre = "Pueblo Bonito" },
+                new Area { Id = 06, Nombre = "Marina del Sol" },
+                new Area { Id = 18, Nombre = "Sitio / Finisterra" },
+                new Area { Id = 16, Nombre = "Sitio" },
+                new Area { Id = 19, Nombre = "Sitio / Pueblo Bonito Sunset Beach" },
+                new Area { Id = 13, Nombre = "Recorrido" },
+                new Area { Id = 12, Nombre = "Pueblo Bonito Sunset Beach / The Office" },
+                new Area { Id = 12, Nombre = "Pueblo Bonito Sunset Beach / The Office" },
+                new Area { Id = 11, Nombre = "Pueblo Bonito Sunset Beach" },
+                new Area { Id = 24, Nombre = "Walmart / ME Cabo" },
+                new Area { Id = 04, Nombre = "Sheraton Hacienda del Mar" },
+                new Area { Id = 16, Nombre = "Sitio°" },
+                new Area { Id = 17, Nombre = "Sitio" }
+            }
         };
 
         public static Unidad[] unidades = new Unidad[]

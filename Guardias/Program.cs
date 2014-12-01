@@ -29,58 +29,79 @@ namespace Guardias
         {
             Origen origen = new Origen();
             origen.Inicializar();
-            //Console.WriteLine(origen.Unidades.Mostrar());
-            //Console.WriteLine(origen.Areas[0].Mostrar());
-            //Console.ReadKey();
 
             // Algoritmo principal.
             Nodo<Area> p = null;
             Nodo<Unidad> q = null;
 
-            Lista<Area> areas = origen.Areas[0];
+            Lista<Area>[] areas = origen.Areas;
             Lista<Unidad> unidades = origen.Unidades;
 
             // Valores iniciales
-            p = areas.Inicio;
+            p = areas[0].Inicio;
             q = unidades.Inicio.Sig.Sig.Sig; // Unidad con Numero = 94 
             int dia = 0; // Lunes
+            int semana = 0; // Semana #1
             string intervalo = string.Empty;
+            DateTime fecha = new DateTime(2013, 12, 30);
 
-            Console.WriteLine("Día #1");
-
-            // Repetir por 7 días (semana)
-            while (dia < 7)
+            Console.WriteLine("Semana #1");
+            Console.WriteLine("(Día #{0}) - {1:f}", 1, fecha);
+            
+            // Repetir por 6 semanas (6 listas de Área)
+            while (semana < areas.Length)
             {
-                // Las primeras 19 áreas con 5 unidades
-                do
+                // Repetir por 7 días (semana)
+                while (dia < 7)
                 {
-                    intervalo = string.Format("{0,40} - {1} {2} {3} {4} {5}",
-                        p, q, q.Sig, q.Sig.Sig, q.Sig.Sig.Sig, q.Sig.Sig.Sig.Sig);
-                    p = p.Sig;
-                    q = q.Sig.Sig.Sig.Sig.Sig;
-                    // Imprimir
-                    Console.WriteLine(intervalo);
-                } while (p.Sig != areas.Inicio);
+                    // Las primeras 19 áreas con 5 unidades
+                    do
+                    {
+                        intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
+                            p, q, q.Sig, q.Sig.Sig, q.Sig.Sig.Sig, q.Sig.Sig.Sig.Sig);
+                        p = p.Sig;
+                        q = q.Sig.Sig.Sig.Sig.Sig;
+                        // Imprimir
+                        Console.WriteLine(intervalo);
+                    } while (p.Sig != areas[semana].Inicio);
 
-                // Caso especial: última área (20) con solo dos unidades
-                Console.WriteLine("{0,40} - {1} {2}\r\n", p, q, q.Sig);
-                Console.ReadKey();
-                dia++;
-                
-                p = p.Sig; // lo mismo que hacer p = p.Inicio
-                q = q.Sig;
+                    // Caso especial: última área (20) con solo dos unidades
+                    Console.WriteLine("{0,44} - {1} {2}\r\n\r\n", p, q, q.Sig);
+                    Console.ReadKey();
+                    fecha = fecha.AddDays(1);
+                    dia++;
 
-                if (dia < 7)
-                {
-                    Console.WriteLine(string.Format("Día #{0}\r\n", dia + 1));
-                    // Caso especial: primera guardia del siguiente día
-                    intervalo = string.Format("{0,40} - {1} {2} {3} {4} {5}",
-                        p, q, q.Ant, q.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant.Ant.Ant);
-                    Console.WriteLine(intervalo);
+                    p = p.Sig; // lo mismo que hacer p = p.Inicio
+                    q = q.Sig;
+                    
+                    if (dia < 7)
+                    {
+                        // Caso especial: primera guardia del siguiente día
+                        Console.WriteLine("Semana #" + (semana + 1));
+                        Console.WriteLine(string.Format("Día #{0} - {1:f}", dia + 1, fecha));
+                        //Console.WriteLine("Día #" + (dia + 1));
+                        intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
+                            p, q.Ant.Ant.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant, q.Ant, q);
+                        Console.WriteLine(intervalo);
+                        p = p.Sig;
+                        q = q.Sig;
+                    }
                 }
-
-                p = p.Sig;
-                q = q.Sig;
+                semana++;
+                if (semana < areas.Length)
+                {
+                    dia = 0;
+                    Console.WriteLine("Semana #" + (semana + 1));
+                    p = areas[semana].Inicio;
+                    // Caso especial: primera guardia del siguiente día
+                    Console.WriteLine(string.Format("Día #{0} - {1:f}", dia + 1, fecha));
+                    //Console.WriteLine("Día #" + (dia + 1));
+                    intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
+                        p, q.Ant.Ant.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant, q.Ant, q);
+                    Console.WriteLine(intervalo);
+                    p = p.Sig;
+                    q = q.Sig;
+                }
             }
         }
     }
