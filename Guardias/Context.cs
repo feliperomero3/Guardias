@@ -9,21 +9,17 @@ namespace Guardias
         public DbSet<Area> Areas { get; set; }
         public DbSet<Guardia> Guardias { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    // Unidad
-        //    modelBuilder.Entity<Unidad>()
-        //        .HasKey(p => p.Id);
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Unidad
+            modelBuilder.Entity<Unidad>()
+                .ToTable("Unidades");
 
-        //    // Áreas
-        //    modelBuilder.Entity<Area>()
-        //        .HasKey(p => p.Id);
+            // Áreas
 
 
-        //    // Guardias
-        //    modelBuilder.Entity<Guardia>()
-        //        .HasKey(p => p.Id);
+            // Guardias
             
-        //}
+        }
     }
 }

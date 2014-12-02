@@ -68,6 +68,14 @@
     <Compile Include="Context.cs" />
     <Compile Include="Guardia.cs" />
     <Compile Include="Lista.cs" />
+    <Compile Include="Migrations\201412022056543_InitialCreate.cs" />
+    <Compile Include="Migrations\201412022056543_InitialCreate.Designer.cs">
+      <DependentUpon>201412022056543_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412022213157_ChangeUnidadTableName.cs" />
+    <Compile Include="Migrations\201412022213157_ChangeUnidadTableName.Designer.cs">
+      <DependentUpon>201412022213157_ChangeUnidadTableName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Origen.cs" />
@@ -95,6 +103,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412022056543_InitialCreate.resx">
+      <DependentUpon>201412022056543_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412022213157_ChangeUnidadTableName.resx">
+      <DependentUpon>201412022213157_ChangeUnidadTableName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,11 +24,12 @@ namespace Guardias
                 var areas = from a in db.Areas
                             orderby a.Nombre
                             select a;
+                Console.WriteLine("Todas las Áreas por orden alfabético:");
                 foreach (var a in areas)
                 {
-                    Console.WriteLine("Todas las Áreas por orden alfabético:");
                     Console.WriteLine(a);
                 }
+                Console.ReadKey();
             }
         }
 
