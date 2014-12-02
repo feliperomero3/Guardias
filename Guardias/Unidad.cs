@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Guardias
 {
@@ -6,6 +7,8 @@ namespace Guardias
     {
         private int _id;
         private int _numero;
+
+        private List<Guardia> _guardias;
 
         public int Id
         {
@@ -17,6 +20,12 @@ namespace Guardias
         {
             get { return _numero; }
             set { _numero = value; }
+        }
+
+        public virtual List<Guardia> Guardias
+        {
+            get { return _guardias; }
+            set { _guardias = value; }
         }
 
         public override string ToString()

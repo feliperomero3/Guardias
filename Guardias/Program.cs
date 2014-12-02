@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Guardias
 {
@@ -6,7 +7,29 @@ namespace Guardias
     {
         private static void Main(string[] args)
         {
-            Inicializar(); 
+            //Inicializar();
+
+            // Probar EF
+            using (var db = new Context())
+            {
+                Console.WriteLine("Ingrese nombre de nueva Área: ");
+                string nombre = Console.ReadLine();
+
+                Area area = new Area { Nombre = nombre };
+
+                db.Areas.Add(area);
+                db.SaveChanges();
+
+                // Mostrar
+                var areas = from a in db.Areas
+                            orderby a.Nombre
+                            select a;
+                foreach (var a in areas)
+                {
+                    Console.WriteLine("Todas las Áreas por orden alfabético:");
+                    Console.WriteLine(a);
+                }
+            }
         }
 
         private static void Inicializar()
