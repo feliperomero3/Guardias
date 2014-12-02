@@ -68,6 +68,7 @@
     <Compile Include="Context.cs" />
     <Compile Include="Guardia.cs" />
     <Compile Include="Lista.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Origen.cs" />
     <Compile Include="Program.cs" />
