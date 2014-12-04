@@ -94,7 +94,7 @@ namespace Guardias
                         q = q.Sig;
                     }
                 } 
-                semana = 0;
+                semana = -1; // quick & dirty!
             }
         }
     }
