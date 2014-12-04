@@ -10,7 +10,7 @@ namespace Guardias
         public DbSet<Guardia> Guardias { get; set; }
         public DbSet<Semana> Semanas { get; set; }
         public DbSet<SemanaArea> SemanasAreas { get; set; }
-        public DbSet<SemanaGuardia> SemanaGuardias { get; set; }
+        public DbSet<SemanaGuardia> SemanasGuardias { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
