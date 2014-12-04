@@ -8,6 +8,9 @@ namespace Guardias
         public DbSet<Unidad> Unidades { get; set; }
         public DbSet<Area> Areas { get; set; }
         public DbSet<Guardia> Guardias { get; set; }
+        public DbSet<Semana> Semanas { get; set; }
+        public DbSet<SemanaArea> SemanasAreas { get; set; }
+        public DbSet<SemanaGuardia> SemanaGuardias { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -19,7 +22,14 @@ namespace Guardias
 
 
             // Guardias
-            
+
+            // SemanasAreas
+            modelBuilder.Entity<SemanaArea>()
+                .ToTable("SemanasAreas");
+
+            // SemanasGuardias
+            modelBuilder.Entity<SemanaGuardia>()
+                .ToTable("SemanasGuardias");
         }
     }
 }

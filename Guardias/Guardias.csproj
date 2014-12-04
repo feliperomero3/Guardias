@@ -76,6 +76,14 @@
     <Compile Include="Migrations\201412022213157_ChangeUnidadTableName.Designer.cs">
       <DependentUpon>201412022213157_ChangeUnidadTableName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412040207522_Area_Guardia_updated_Semana_SemanaArea_SemanaGuardia_added.cs" />
+    <Compile Include="Migrations\201412040207522_Area_Guardia_updated_Semana_SemanaArea_SemanaGuardia_added.Designer.cs">
+      <DependentUpon>201412040207522_Area_Guardia_updated_Semana_SemanaArea_SemanaGuardia_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040223533_ChangeTableName_SemanaArea_SemanaGuardia.cs" />
+    <Compile Include="Migrations\201412040223533_ChangeTableName_SemanaArea_SemanaGuardia.Designer.cs">
+      <DependentUpon>201412040223533_ChangeTableName_SemanaArea_SemanaGuardia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Origen.cs" />
@@ -113,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412022213157_ChangeUnidadTableName.resx">
       <DependentUpon>201412022213157_ChangeUnidadTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040207522_Area_Guardia_updated_Semana_SemanaArea_SemanaGuardia_added.resx">
+      <DependentUpon>201412040207522_Area_Guardia_updated_Semana_SemanaArea_SemanaGuardia_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040223533_ChangeTableName_SemanaArea_SemanaGuardia.resx">
+      <DependentUpon>201412040223533_ChangeTableName_SemanaArea_SemanaGuardia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
