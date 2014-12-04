@@ -26,7 +26,8 @@ namespace Guardias
 
             // Valores iniciales
             p = areas[0].Inicio;
-            q = unidades.Inicio.Sig.Sig.Sig; // Unidad con Numero = 94 
+            q = unidades.Inicio.Sig.Sig; // Unidad con Numero = 95
+ 
             int dia, semana, diaTotal, semanaTotal;
             dia = semana = 0;
             diaTotal = semanaTotal = 1;
@@ -48,7 +49,7 @@ namespace Guardias
                         do
                         {
                             intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
-                                p, q, q.Sig, q.Sig.Sig, q.Sig.Sig.Sig, q.Sig.Sig.Sig.Sig);
+                                p, q.Sig.Sig.Sig.Sig, q.Sig.Sig.Sig, q.Sig.Sig, q.Sig, q);
                             p = p.Sig;
                             q = q.Sig.Sig.Sig.Sig.Sig;
                             // Imprimir
@@ -56,7 +57,7 @@ namespace Guardias
                         } while (p.Sig != areas[semana].Inicio);
 
                         // Caso especial: última área (20) con solo dos unidades
-                        Console.WriteLine("{0,44} - {1} {2}\r\n\r\n", p, q, q.Sig);
+                        Console.WriteLine("{0,44} - {1} {2}\r\n\r\n", p, q.Sig, q);
                         Console.ReadKey();
                         fecha = fecha.AddDays(1);
                         dia++;
@@ -71,7 +72,7 @@ namespace Guardias
                             Console.WriteLine("Semana #{0} ({1})", semana + 1, semanaTotal);
                             Console.WriteLine("Día #{0} ({1}) - {2:f}", dia + 1, diaTotal, fecha.ToString("dddd dd/MMMM/yyyy", esMx));
                             intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
-                                p, q.Ant.Ant.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant, q.Ant, q);
+                                p, q, q.Ant, q.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant.Ant.Ant);
                             Console.WriteLine(intervalo);
                             p = p.Sig;
                             q = q.Sig;
@@ -87,13 +88,13 @@ namespace Guardias
                         Console.WriteLine("Semana #{0} ({1})", semana + 1, semanaTotal);
                         Console.WriteLine("Día #{0} ({1}) - {2}", dia + 1, diaTotal, fecha.ToString("dddd dd/MMMM/yyyy", esMx));
                         intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
-                            p, q.Ant.Ant.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant, q.Ant, q);
+                            p, q, q.Ant, q.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant.Ant.Ant);
                         Console.WriteLine(intervalo);
                         p = p.Sig;
                         q = q.Sig;
                     }
                 } 
-                semana = 0;
+                semana = -1; // quick & dirty!
             }
         }
     }
