@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Guardias
 {
     class Program
     {
+        private static CultureInfo esMx = new CultureInfo("es-MX");
+
         private static void Main(string[] args)
         {
             Inicializar(); 
@@ -31,7 +34,7 @@ namespace Guardias
             DateTime fecha = new DateTime(2013, 12, 30);
 
             Console.WriteLine("Semana #{0} ({1})", 1, semanaTotal);
-            Console.WriteLine("Día #{0} ({1}) - {2:f}", 1, diaTotal, fecha);
+            Console.WriteLine("Día #{0} ({1}) - {2:f}", 1, diaTotal, fecha.ToString("dddd dd/MMMM/yyyy", esMx));
 
             while (true)
             {
@@ -66,7 +69,7 @@ namespace Guardias
                         {
                             // Caso especial: primera guardia del siguiente día
                             Console.WriteLine("Semana #{0} ({1})", semana + 1, semanaTotal);
-                            Console.WriteLine("Día #{0} ({1})- {2:f}", dia + 1, diaTotal, fecha);
+                            Console.WriteLine("Día #{0} ({1}) - {2:f}", dia + 1, diaTotal, fecha.ToString("dddd dd/MMMM/yyyy", esMx));
                             intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
                                 p, q.Ant.Ant.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant, q.Ant, q);
                             Console.WriteLine(intervalo);
@@ -82,7 +85,7 @@ namespace Guardias
                         p = areas[semana].Inicio;
                         // Caso especial: primera guardia del siguiente día
                         Console.WriteLine("Semana #{0} ({1})", semana + 1, semanaTotal);
-                        Console.WriteLine("Día #{0} ({1})- {2:f}", dia + 1, diaTotal, fecha);
+                        Console.WriteLine("Día #{0} ({1}) - {2}", dia + 1, diaTotal, fecha.ToString("dddd dd/MMMM/yyyy", esMx));
                         intervalo = string.Format("{0,44} - {1} {2} {3} {4} {5}",
                             p, q.Ant.Ant.Ant.Ant, q.Ant.Ant.Ant, q.Ant.Ant, q.Ant, q);
                         Console.WriteLine(intervalo);
