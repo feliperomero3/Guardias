@@ -26,7 +26,8 @@ namespace Guardias
 
             // Valores iniciales
             p = areas[0].Inicio;
-            q = unidades.Inicio.Sig.Sig.Sig; // Unidad con Numero = 94 
+            q = unidades.Inicio.Sig.Sig; // Unidad con Numero = 95
+ 
             int dia, semana, diaTotal, semanaTotal;
             dia = semana = 0;
             diaTotal = semanaTotal = 1;
