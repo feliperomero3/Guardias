@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Guardias
 {
@@ -11,6 +12,7 @@ namespace Guardias
         private Unidad _unidad;
         private int _areaId;
         private Area _area;
+        private List<SemanaGuardia> _semanaGuardia;
 
         public int Id
         {
@@ -45,6 +47,12 @@ namespace Guardias
         {
             get { return _area; }
             set { _area = value; }
+        }
+
+        public virtual List<SemanaGuardia> SemanaGuardia
+        {
+            get { return _semanaGuardia; }
+            set { _semanaGuardia = value; }
         }
     }
 }

@@ -81,6 +81,9 @@
     <Compile Include="Origen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Semana.cs" />
+    <Compile Include="SemanaGuardia.cs" />
+    <Compile Include="SemanaArea.cs" />
     <Compile Include="Unidad.cs" />
   </ItemGroup>
   <ItemGroup>

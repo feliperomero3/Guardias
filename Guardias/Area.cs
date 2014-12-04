@@ -7,9 +7,10 @@ namespace Guardias
     {
         private int _id;
         private string _nombre;
-        private string _apodo;
+        private string _nombreCorto;
 
         private List<Guardia> _guardias;
+        private List<SemanaArea> _semanasAreas;
 
         public int Id
         {
@@ -25,14 +26,20 @@ namespace Guardias
 
         public string Apodo
         {
-            get { return _apodo; }
-            set { _apodo = value; }
+            get { return _nombreCorto; }
+            set { _nombreCorto = value; }
         }
 
         public virtual List<Guardia> Guardias
         {
             get { return _guardias; }
             set { _guardias = value; }
+        }
+
+        public virtual List<SemanaArea> SemanasAreas
+        {
+            get { return _semanasAreas; }
+            set { _semanasAreas = value; }
         }
 
         public override string ToString()
