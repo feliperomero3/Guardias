@@ -3,19 +3,20 @@
 namespace Guardias
 {
     /// <summary>
-    /// Nodo de tipo T para usar junto con @@link Lista.cs
+    /// Nodo de tipo T para usar junto con Lista circular
     /// </summary>
     /// <typeparam name="T">Cualquier primitivo o definido por el usuario</typeparam>
     public class Nodo<T>
     {
+        private Lista<T> _padre;
         private T _entidad;
         private Nodo<T> _sig;
         private Nodo<T> _ant;
 
-        public Nodo(T x)
+        public Lista<T> Padre
         {
-            _entidad = x;
-            _sig = null;
+            get { return _padre; }
+            set { _padre = value; }
         }
 
         public T Entidad
@@ -34,6 +35,12 @@ namespace Guardias
         {
             get { return _ant; }
             set { _ant = value; }
+        }
+
+        public Nodo(T x)
+        {
+            _entidad = x;
+            _sig = null;
         }
 
         public override string ToString()

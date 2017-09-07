@@ -7,10 +7,10 @@ namespace Guardias
     /// </summary>
     class Origen
     {
-        private Lista<Area>[] _areas;
+        private Lista<Lista<Area>> _areas;
         private Lista<Unidad> _unidades;
 
-        public Lista<Area>[] Areas
+        public Lista<Lista<Area>> Areas
         {
             get { return _areas; }
             set { _areas = value; }
@@ -24,14 +24,14 @@ namespace Guardias
 
         public Origen()
         {
-            // 6 listas de Áreas
-            _areas = new Lista<Area>[Auxiliar.areas.Length];
-            // 1 lista para Unidades
+            // Una lista de seis listas de Áreas
+            _areas = new Lista<Lista<Area>>();
+            // Una lista para Unidades
             _unidades = new Lista<Unidad>();
         }
 
         /// <summary>
-        /// Llena las 6 listas de Áreas y la lista de Unidades
+        /// Llena la lista de seis listas de Áreas y la lista de Unidades
         /// como corresponde.
         /// </summary>
         public void Inicializar()
@@ -39,14 +39,16 @@ namespace Guardias
             if (_areas != null)
             {
                 // Seis semanas
-                for (int i = 0; i < _areas.Length; i++)
+                for (int i = 0; i < Auxiliar.areas.Length; i++)
                 {
+                    Lista<Area> subAreas = new Lista<Area>();
                     // Semana i
-                    _areas[i] = new Lista<Area>();
                     foreach (Area area in Auxiliar.areas[i])
                     {
-                        _areas[i].Insertar(area);
+                        subAreas.Insertar(area);
                     }
+                    subAreas.Padre = _areas;
+                    _areas.Insertar(subAreas);
                 }
             }
             if (_unidades != null)

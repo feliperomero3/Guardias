@@ -10,6 +10,7 @@ namespace Guardias
     /// <typeparam name="T">Cualquier primitivo o definido por el usuario</typeparam>
     public class Lista<T>
     {
+        private Lista<Lista<T>> _padre;
         private Nodo<T> _inicio;
         private Nodo<T> _fin;
 
@@ -25,6 +26,12 @@ namespace Guardias
             private set { _fin = value; }
         }
 
+        public Lista<Lista<T>> Padre
+        {
+            get { return _padre; }
+            set { _padre = value; }
+        }
+
         public Lista()
         {
             _inicio = null;
@@ -37,6 +44,7 @@ namespace Guardias
         public void Insertar(T x)
         {
             Nodo<T> p = new Nodo<T>(x);
+            p.Padre = this;
             if (_inicio == null)
             {
                 _inicio = _fin = p;
@@ -69,6 +77,8 @@ namespace Guardias
             return null;
         }
 
+        
+        
         /// <summary>
         /// Devuelve el contenido de la lista
         /// </summary>
