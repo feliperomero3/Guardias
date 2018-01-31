@@ -6,6 +6,6 @@ Guardias es una aplicación de Consola de Windows (Console Windows Application).
 
 ## Licencia
 
-MIT License
+[MIT License](/LICENSE)
 
 Copyright (c) 2017 Felipe Romero
