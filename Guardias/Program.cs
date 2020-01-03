@@ -56,8 +56,8 @@ namespace Guardias
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    Console.WriteLine("Semana #{0} - ({1})", semanas, "indexOf");
-                    Console.WriteLine("Día #{0} ({1}) - {2:f}", dias++, j + 1, 
+                    Console.WriteLine("Semana #{0}", semanas);
+                    Console.WriteLine("Día #{0} ({1}) - {2}", dias++, j + 1,
                         fecha.ToString(formato, esMx));
 
                     // Caso especial: avance invertido (primera Área)
