@@ -21,9 +21,10 @@ namespace Guardias
 
         private static void Looper()
         {
-            Console.WriteLine("Ingrese opción deseada ");
             Console.WriteLine("A = avanzar, B = avanzar hasta fecha, X o ^C = cerrar");
-            ConsoleKeyInfo tecla = Console.ReadKey(false);
+            Console.Write("Ingrese opción deseada: ");
+            ConsoleKeyInfo tecla = Console.ReadKey();
+            Console.WriteLine();
             switch (tecla.Key)
             {
                 case ConsoleKey.A:
@@ -78,7 +79,7 @@ namespace Guardias
 
                     // Caso especial: avanza dos unidades (última Área)
                     Console.WriteLine("{0, 44} - {1} {2}\r\n\r\n", p, q.Sig, q);
-                    ConsoleKeyInfo tecla = Console.ReadKey();
+                    ConsoleKeyInfo tecla = Console.ReadKey(true);
                     p = p.Sig;
                     fecha = fecha.AddDays(1);
 
